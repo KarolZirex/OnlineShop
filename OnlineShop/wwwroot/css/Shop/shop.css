@@ -1,0 +1,47 @@
+﻿/*=========split-screen=========*/
+.left-side {
+    float: left;
+    width: 30%;
+    height: 900px;
+}
+.right-side {
+    float: left;
+    width: 70%;
+    height: 900px;
+}
+/*=========left-split===========*/
+.top-left-split {
+    height: 10%;
+    width: 100%;
+}
+.menu-left-split {
+    height: 45%;
+    width: 100%;
+    background-color: grey;
+    margin: auto;
+}
+.bottom-left-split {
+    height: 50%;
+    width: 100%;
+}
+
+
+/*=========right-side=========*/
+.top-right-split {
+    height: 10%;
+    padding: 10px;
+}
+
+.bottom-right-split {
+    height: 90%;
+    padding: 10px;
+    background-color: skyblue;
+}
+/*============menu===========*/
+.btn-menu-padding {
+    padding: 15px;
+}
+/*=========text format=======*/
+.h1 {
+    text-align: center;
+}

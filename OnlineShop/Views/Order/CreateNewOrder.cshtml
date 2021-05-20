@@ -1,0 +1,103 @@
+﻿@model OnlineShop.ViewModels.CreateNewOrderViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/Shop/shop.css" />
+</head>
+<body>
+    
+    <div class="left-side">
+
+        @await Html.PartialAsync("_MainMenu")
+
+    </div>
+                <div class="right-side">
+                    <div class="top-right-split"></div>
+                    <div class="bottom-right-split">
+                        
+                        <form method="post" asp-action="CreateNewOrder">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            
+                            <div class="border p-3">
+                                <div class="form-group row">
+                                    <h2 class="text-black-50 pl-3">Add new Order</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <div class="form-group row">
+
+                                            <div class="col-5">
+                                                <label>Customer name:</label>
+                                                <input asp-for="Customer.Name" class="form-control" />
+                                                <span asp-validation-for="Customer.Name" class="text-danger"></span>
+                                            </div>
+                                            <div class="col-5">
+                                                <label>Customer Lastname:</label>
+                                                <input asp-for="Customer.LastName" class="form-control" />
+                                                <span asp-validation-for="Customer.LastName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-3">
+                                                <label>City:</label>
+                                                <input asp-for="Customer.City" class="form-control" />
+                                                <span asp-validation-for="Customer.City" class="text-danger"></span>
+                                            </div>
+                                            <div class="col-3">
+                                                <label>Zip Code:</label>
+                                                <input asp-for="Customer.ZipCode" class="form-control" />
+                                                <span asp-validation-for="Customer.ZipCode" class="text-danger"></span>
+                                            </div>
+                                            <div class="col-4">
+                                                <label>Street Adress:</label>
+                                                <input asp-for="Customer.StreetAdress" class="form-control" />
+                                                <span asp-validation-for="Customer.StreetAdress" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        @*xxx*@
+
+                                        <div class="form-group row">
+                                            <div class="col-4">
+                                                <label>Product:</label>
+                                                <div class="form-group">
+                                                    @Html.DropDownListFor(m => m.Product.Id, new SelectList(Model.ListOfProducts, "Id", "Name"), "Select the Product", new { @class = "form-grup" })
+                                                    <span asp-validation-for="Product.Name" class="text-danger"></span>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-4">
+                                                <label>Delivery Type:</label>
+                                                @Html.DropDownListFor(m => m.Delivery.Id, new SelectList(Model.DeliveryTypes, "Id", "Name"), "Choose Delivery Type", new { @class = "form-grup" })
+                                                <span asp-validation-for="Delivery.Name" class="text-danger"></span>
+                                            </div>
+ 
+                                            <div class="col-2">
+                                                <label>Price:</label>
+                                                <input asp-for="Price" class="form-control" />
+                                                <span asp-validation-for="Price" class="text-danger"></span>
+                                            </div>
+
+                                        </div>
+                                        @*xx*@
+                                        <div class="form-group row">
+                                            <div class="col-8 offset-2 row">
+                                                <div class="col">
+                                                    <input type="submit" class="btn btn-info w-75" value="create" />
+                                                </div>
+                                                <div class="col">
+                                                    <a asp-action="Index" class="btn btn-danger w-75">Back</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+</body>
+</html>
